@@ -36,7 +36,12 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release -DVRPN_BUILD_CLIENTS=OFF -DVRPN_BUILD_SERVERS=OFF -DVRPN_BUILD_SERVER_LIBRARY=OFF -DVRPN_BUILD_TEST_RPC_GENERATION=OFF -DVRPN_BUILD_PYTHON_HANDCODED_3X=OFF
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DVRPN_BUILD_CLIENTS=OFF
+      - -DVRPN_BUILD_SERVERS=OFF
+      - -DVRPN_BUILD_SERVER_LIBRARY=OFF
+      - -DVRPN_BUILD_TEST_RPC_GENERATION=OFF
+      - -DVRPN_BUILD_PYTHON_HANDCODED_3X=OFF
     sources:
       - type: archive
         url: https://github.com/vrpn/vrpn/archive/refs/tags/v07.36.tar.gz
