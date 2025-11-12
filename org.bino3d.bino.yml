@@ -1,6 +1,6 @@
 app-id: org.bino3d.bino
 runtime: org.kde.Platform
-runtime-version: '6.8'
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 command: bino
 finish-args:
@@ -28,24 +28,19 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://github.com/ValveSoftware/openvr/archive/refs/tags/v2.5.1.tar.gz
-        sha256: 54f654fce001682d8ac608f544a6c41e03a672b005c1deca3579fa36480a537c
+        url: https://github.com/ValveSoftware/openvr/archive/refs/tags/v2.12.14.tar.gz
+        sha256: becc2e6b956d1b98d66e2cc75fd8b20db94eb5af584ec360a4dad7e8adec3176
     cleanup:
       - '/share/pkgconfig'
   - name: vrpn
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=Release -DVRPN_BUILD_CLIENTS=OFF -DVRPN_BUILD_SERVERS=OFF -DVRPN_BUILD_SERVER_LIBRARY=OFF -DVRPN_BUILD_TEST_RPC_GENERATION=OFF -DVRPN_BUILD_PYTHON_HANDCODED_3X=OFF
     sources:
       - type: archive
-        url: https://github.com/vrpn/vrpn/archive/refs/tags/version_07.35.tar.gz
-        sha256: faa98bd6f81be2ddaaf438fc3a89cfcc929a67627ddb72a3d4fe795fcf51de29
-    cleanup:
-      - '/bin'
-      - '/etc'
-      - '/lib/python*'
-      - '/share/vrpn-07.35'
+        url: https://github.com/vrpn/vrpn/archive/refs/tags/v07.36.tar.gz
+        sha256: bed00ae060fc7c0cfdaa2fa01f6f2db4976d431971e8824b710eb63cfbba0df7
   - name: qvr
     buildsystem: cmake-ninja
     subdir: libqvr
@@ -61,5 +56,5 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://bino3d.org/releases/bino-2.5.tar.gz
-        sha256: 791edd5cb8c59f0177ad454edce05cbfbcc7df1a447280f69048af3d149c26d7
+        url: https://bino3d.org/releases/bino-2.6.tar.gz
+        sha256: 843cac2c951dd933e55987717223a45462d3fb0f332fc6311e173d8dabe66e5c
