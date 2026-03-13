@@ -63,3 +63,5 @@ modules:
       - type: archive
         url: https://bino3d.org/releases/bino-2.7.tar.gz
         sha256: cdc7a7d970f0771b9b34c2f5b1ee75c570986552fb90d3f972723036cf2f0b03
+      - type: patch
+        path: metainfo.patch
